@@ -1,0 +1,16 @@
+== Clocky Rails Backend
+
+This is the back end for Clocky, a trivial web application that is being implemented using different client-side frameworks such as SproutCore[http://www.sproutcore.com] and RestfulX[http://restfulx.github.com].
+
+=== Running the Clocky Rails Backend
+
+The following prerequisites are necessary:
+  - Ruby
+  - RubyGems 
+  - Rails version 2.3.4
+  - sqlite3-ruby gem
+
+Once those are in place, simply do:
+
+  rake db:migrate
+  script/server
