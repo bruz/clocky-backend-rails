@@ -1,0 +1,59 @@
+<p>
+  <b>Name:</b>
+  <%=h @project.name %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @project.start_date %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @project.project_status %>
+</p>
+
+<p><%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %></p>
+
+<h2>Work sessions</h2>
+<% if @project_session %>
+  <% form_for([@project, @project_session]) do |f| %>
+    <p>
+      <%= f.label :description %><br/>
+      <%= f.text_field :description %>
+    </p>
+    <p>Timer started at <%=h @project_session.start_time.strftime("%I:%M%p on %m/%d/%Y") %>
+       <%= submit_tag 'Stop Timer' %></p>
+  <% end %>
+<% else %>
+  <% form_for([@project, ProjectSession.new]) do |f| %>
+    <p>
+      <%= f.label :description %><br/>
+      <%= f.text_field :description %>
+    </p>
+    <p><%= submit_tag 'Start Timer' %></p>
+  <% end %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Started</th>
+      <th>Stopped</th>
+      <th>Description</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @project.project_sessions.finished.each do |project_session| %>
+    <tr>
+      <td><%= project_session.start_time.strftime("%I:%M%p on %m/%d/%Y") %>
+      <td><%= project_session.end_time.strftime("%I:%M%p on %m/%d/%Y") %>
+      <td><%= project_session.description %>
+      <td><%= link_to 'Destroy', project_project_session_path(@project, project_session), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>  
+<% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,12 @@
+<h1>Editing project_session</h1>
+
+<% form_for(@project_session) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @project_session %> |
+<%= link_to 'Back', project_sessions_path %>
