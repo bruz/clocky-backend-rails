@@ -4,7 +4,7 @@ class ProjectSessionsController < ApplicationController
   # GET /project_sessions
   # GET /project_sessions.xml
   def index
-    @project_sessions = ProjectSession.all
+    @project_sessions = ProjectSession.all(:conditions => {:project_id => @project.id})
 
     respond_to do |format|
       format.html # index.html.erb
