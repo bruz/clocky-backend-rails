@@ -14,3 +14,9 @@ Once those are in place, simply do:
 
   rake db:migrate
   script/server
+
+=== Clocky frontend implementations
+
+- {Clocky RestfulX Frontend}[http://github.com/bruz/clocky-frontend-restfulx]
+- {Clocky SproutCore Frontend}[http://github.com/bruz/clocky-frontend-sproutcore]
+- {Clocky Cappuccino Frontend}[http://github.com/bruz/clocky-frontend-cappuccino]
