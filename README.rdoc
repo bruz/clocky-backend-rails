@@ -7,7 +7,8 @@ This is the back end for Clocky, a trivial web application that is being impleme
 The following prerequisites are necessary:
   - Ruby
   - RubyGems 
-  - Rails version 2.3.4
+  - Rails version 2.3.5
+  - Mongrel >= 1.1.5
   - sqlite3-ruby gem
 
 Once those are in place, simply do:
